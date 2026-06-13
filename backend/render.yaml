@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: linguaflow-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: MICROSOFT_TRANSLATOR_KEY
+        sync: false
+      - key: MICROSOFT_TRANSLATOR_REGION
+        sync: false
+      - key: MICROSOFT_TRANSLATOR_ENDPOINT
+        value: https://api.cognitive.microsofttranslator.com

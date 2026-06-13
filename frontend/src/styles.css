@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #eef8f7;
+}
+
+.dark body {
+  background: #0f1720;
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/55 bg-white/75 shadow-glow backdrop-blur-2xl dark:border-white/10 dark:bg-slate-900/70;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-900/20 transition hover:-translate-y-0.5 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-mint dark:text-slate-950 dark:hover:bg-teal-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white/75 px-4 py-2.5 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-lagoon focus:ring-4 focus:ring-cyan-100 dark:border-white/10 dark:bg-slate-950/50 dark:text-white dark:focus:ring-cyan-950;
+  }
+
+  .card {
+    @apply glass rounded-lg p-5;
+  }
+}
